@@ -1,9 +1,22 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<MudDrawer @bind-Open="_drawerOpen" Elevation="2" ClipMode="DrawerClipMode.Always" Height="100%"
+           Variant="@DrawerVariant.Mini" OpenMiniOnHover="true">
+    <MudNavMenu Color="Color.Success" Bordered="true" Style="white-space: nowrap;" Rounded="true">
+        <MudNavLink Href="/octopanel" Match="NavLinkMatch.All" Icon="@Icons.Filled.Dashboard">Dashboard</MudNavLink>
+        <MudNavLink Href="/octopanel/control"
+                    Match="NavLinkMatch.All"
+                    Icon="@Icons.Filled.MiscellaneousServices">
+            Station Management
+        </MudNavLink>
+        <MudNavGroup Title="Settings" Icon="@Icons.Filled.Settings" HideExpandIcon="true">
+            <MudNavLink Href="/users" Icon="@Icons.Filled.People">Users</MudNavLink>
+            <MudNavLink Href="/security" Icon="@Icons.Filled.Security">Security</MudNavLink>
+        </MudNavGroup>
+        <MudNavLink Href="/about" Match="NavLinkMatch.All" Icon="@Icons.Filled.Info">About</MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+    bool _drawerOpen = false;
+}
