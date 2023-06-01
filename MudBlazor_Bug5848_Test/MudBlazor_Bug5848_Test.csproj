@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\joe-gregory\MudBlazor\src\MudBlazor\MudBlazor.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\open-iconic\font\css\" />
+  </ItemGroup>
+
 </Project>
